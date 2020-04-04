@@ -1,4 +1,4 @@
-clear all, close all, clc
+%clear all, close all, clc
 % ResultadoGRAF (v1.0)
 % Grafica las imgs finales en PNG o EPS
 
@@ -32,8 +32,8 @@ clear all, close all, clc
 %==========================================================================
 
 %%%%%%%%%%%%%%%%%%Generar imagenes finales PNG o EPS%%%%%%%%%%%%%%%%%
-gen_graf = 1; %1 para generar archivos, 0 para no generar.
-tipo_graf = 'eps'; %eps o png.
+%gen_graf = 1; %1 para generar archivos, 0 para no generar.
+%tipo_graf = 'eps'; %eps o png.
 
 %%%%%%%%%%%%%%%%%%%%%Archivos de entrada y salida%%%%%%%%%%%%%%%%%%%%
 fileID1 = fopen('[SALIDA_ESTACIONES].txt');

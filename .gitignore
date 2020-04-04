@@ -1,0 +1,11 @@
+# Ignorando archivos de salida:
+.directory
+.git/
+.../
+__pycache__/
+Recursos/
+HIPO_IRIS.txt
+SOURCE/[HIPO_IRIS].txt
+SOURCE/[LISTA_xy].txt
+SOURCE/[SALIDA_ESTACIONES].txt
+SOURCE/[SALIDA_FINAL].txt

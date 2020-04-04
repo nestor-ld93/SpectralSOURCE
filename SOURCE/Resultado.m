@@ -1,4 +1,4 @@
-clear all, close all, clc
+%clear all, close all, clc
 % Resultado (v1.0)
 % Realiza el Post-Procesamiento (Resultado final) de SpectralSOURCE.
 
@@ -35,7 +35,7 @@ clear all, close all, clc
 %1 : Dip-Slip (Subduccion)
 %2 : Normal Dip-Slip (Continental)
 %3 : Strike-Slip
-tipo_falla = 1;
+%tipo_falla = 1;
 
 %%%%%%%%%%%%%%%%%%%%%Archivos de entrada y salida%%%%%%%%%%%%%%%%%%%%
 fileID1 = fopen('[SALIDA_ESTACIONES].txt');

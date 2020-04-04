@@ -33,8 +33,8 @@ echo '****************Lista archivos para trabajar con matlab***************'
 echo '**********************************************************************'
 echo ''
 
-ls *.fft.xy > [LISTA_xy].txt
-mv HIPO_IRIS.txt [HIPO_IRIS].txt
+ls SOURCE/*.fft.xy > SOURCE/[LISTA_xy].txt
+mv SOURCE/HIPO_IRIS.txt SOURCE/[HIPO_IRIS].txt
 
 echo 'Se crearon los archivos:'
 echo '[LISTA].txt & [HIPO_IRIS].txt'

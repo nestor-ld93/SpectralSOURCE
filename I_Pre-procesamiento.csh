@@ -60,14 +60,14 @@ echo ""
 #    f1 = 0.002, f2 = 0.1 : Mw > 8.0
 #    np = 5
 
-set archivo_seed = '2007-08-15_MW8.0_Near_Coast_Of_Peru.719664.seed'
-set N_comp = 1
-set tipo_graf = 'none'
-set util_SNR = 0
-set util_filtro = 1
-set f1 = 0.005
-set f2 = 0.2
-set np = 5
+set archivo_seed = $1
+set N_comp = $2
+set tipo_graf = $3
+set util_SNR = $4
+set util_filtro = $5
+set f1 = $6
+set f2 = $7
+set np = $8
 ###################################################################################
 echo "+--------------------------------------------------------------------------+"
 echo "|             --> EL PRE-PROCESAMIENTO INICIARÁ EN 5 s ... <--             |"

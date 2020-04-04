@@ -36,17 +36,17 @@ echo ''
 set CARPETA_GRAF = 'Graficas_FFT_02'
 
 echo '->Archivos ".png" a ordenados:'
-ls *.png | wc -l
-ls *.png
+ls SOURCE/*.png | wc -l
+ls SOURCE/*.png
 
 echo ''
 echo '->Archivos ".eps" a ordenados:'
-ls *.eps | wc -l
-ls *.eps
+ls SOURCE/*.eps | wc -l
+ls SOURCE/*.eps
 
-mkdir $CARPETA_GRAF
-mv *.png $CARPETA_GRAF
-mv *.eps $CARPETA_GRAF
+mkdir SOURCE/$CARPETA_GRAF
+mv SOURCE/*.png SOURCE/$CARPETA_GRAF
+mv SOURCE/*.eps SOURCE/$CARPETA_GRAF
 
 echo ''
 echo '**************************Fin del programa****************************'

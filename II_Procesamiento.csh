@@ -50,7 +50,7 @@ echo ""
 # ELIMINAR ARCHIVOS INNECESARIOS (*.deconv, *.fft):
 # 1) Ingrese 1 para eliminar, 0 para no eliminar
 
-set eliminar = 1
+set eliminar = $1
 ###################################################################################
 
 echo "+--------------------------------------------------------------------------+"
