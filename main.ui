@@ -36,7 +36,7 @@
     <normaloff>:/icono/semiconductor.png</normaloff>:/icono/semiconductor.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(21, 21, 21);</string>
+   <string notr="true"/>
   </property>
   <property name="unifiedTitleAndToolBarOnMac">
    <bool>false</bool>
@@ -66,7 +66,7 @@
      <string notr="true">background-color: transparent;</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;SpectralSOURCE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;SpectralSOURCE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Fondo">
@@ -74,7 +74,7 @@
      <rect>
       <x>0</x>
       <y>44</y>
-      <width>801</width>
+      <width>800</width>
       <height>521</height>
      </rect>
     </property>
@@ -95,7 +95,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(18, 18, 18);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Salir</string>
@@ -167,7 +167,7 @@ background-color: transparent;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(35, 38, 41);</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -244,7 +244,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(63, 68, 74);</string>
+       <string notr="true"/>
       </property>
       <property name="maximum">
        <number>5</number>
@@ -343,7 +343,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(63, 68, 74);</string>
+       <string notr="true"/>
       </property>
       <property name="plainText">
        <string>0.002</string>
@@ -362,7 +362,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(63, 68, 74);</string>
+       <string notr="true"/>
       </property>
       <property name="plainText">
        <string>0.1</string>
@@ -582,7 +582,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(63, 68, 74);</string>
+       <string notr="true"/>
       </property>
      </widget>
      <widget class="QComboBox" name="combo_comp">
@@ -647,7 +647,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(63, 68, 74);</string>
+       <string notr="true"/>
       </property>
       <property name="plainText">
        <string>¡No iniciar ni finalizar con &quot;;&quot;!</string>
@@ -704,7 +704,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(18, 18, 18);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Limpiar todo y reiniciar</string>
@@ -902,7 +902,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(18, 18, 18);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Limpiar resultados y reiniciar</string>
@@ -953,7 +953,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(18, 18, 18);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Limpiar todos los archivos y reiniciar</string>
@@ -1056,7 +1056,7 @@ background-color: transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(18, 18, 18);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Tengo los archivos txt de salida</string>
@@ -1893,8 +1893,8 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;SpectralSOURCE&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright (C) 2020 Néstor Luna Diaz&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Versión: 1.1.0&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Última modificación: 03/04/2020&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Versión: 1.1.1&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Última modificación: 06/04/2020&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enlace de descarga oficial: &lt;a href=&quot;https://github.com/quantum-phy/SpectralSOURCE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;https://github.com/quantum-phy/SpectralSOURCE&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Contacto: nestor.ld93@gmail.com&lt;/p&gt;
@@ -1923,6 +1923,23 @@ background-color: transparent;</string>
      </widget>
     </widget>
    </widget>
+   <widget class="QLabel" name="Fondo_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(49, 54, 59);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Fondo_2</zorder>
    <zorder>Fondo</zorder>
    <zorder>tabWidget</zorder>
    <zorder>Titulo_programa</zorder>
