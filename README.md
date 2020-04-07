@@ -26,6 +26,7 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - ps2eps (Linux)
 - MATLAB 8.5 (2015a)
 - python3 (Linux)
+- python3-pyqt5 (Linux)
 - GNU Linux (Kernel 4.15) 64-bit [Se recomienda una distribución con KDE Plasma 5.12 o superior]
 
 ## ¿CÓMO DESCARGAR?
@@ -60,3 +61,4 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - (v1.1.0) [04/04/2020] Cambios a varios archivos para enlazarlos al programa principal: **SpectralSOURCE.py**
 - (v1.1.0) [04/04/2020] Se añadió una interfaz gráfica en PyQt5.
 - (v1.1.1) [06/04/2020] Corrección en el esquema de colores.
+- (v1.1.1) [06/04/2020] Con Plasma 5.12 o superior, es posible tener el modo claro o modo oscuro dependiendo del esquema de colores seleccionado.
