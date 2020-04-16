@@ -62,3 +62,4 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - (v1.1.0) [04/04/2020] Se añadió una interfaz gráfica en PyQt5.
 - (v1.1.1) [06/04/2020] Corrección en el esquema de colores.
 - (v1.1.1) [06/04/2020] Con Plasma 5.12 o superior, es posible tener el modo claro o modo oscuro dependiendo del esquema de colores seleccionado.
+- (v1.1.2) [16/04/2020] Correcciones a los enlaces externos.
