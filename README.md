@@ -32,7 +32,7 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 ## ¿CÓMO DESCARGAR?
 - Para obtener la última versión estable, descargue desde la pestaña "releases".
 - Para obtener la última versión candidata a estable, descargue desde el botón "Clone or download" o ejecute en un terminal:
-`git clone https://github.com/quantum-phy/SpectralSOURCE`
+`git clone https://github.com/nestor-ld93/SpectralSOURCE`
 
 ## ¿CÓMO EJECUTAR?
 1. Descargar las señales de la red internacional del IRIS (un archivo en formato SEED).
