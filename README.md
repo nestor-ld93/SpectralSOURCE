@@ -1,5 +1,5 @@
 # SpectralSOURCE
-Es un programa semi-automático con interfaz PyQt5 en lenguaje C-Shell, Bash y Matlab con el objetivo de estimar del momento sísmico escalar y las características de la fuente sísmica (dimensiones, caída de esfuerzos y deslizamiento) utilizando registros de desplazamiento de la onda P en la componente vertical (BHZ).
+Es un programa semi-automático con interfaz PyQt5 en lenguaje C-Shell, Bash y Matlab con el objetivo de estimar del momento sísmico escalar y las características de la fuente sísmica (dimensiones, caída de esfuerzos y deslizamiento) utilizando el método de análisis de los espectros de desplazamiento de las ondas P en la componente vertical (BHZ).
 
 Las salidas generadas por **SpectralSOURCE** son las siguientes:
 
