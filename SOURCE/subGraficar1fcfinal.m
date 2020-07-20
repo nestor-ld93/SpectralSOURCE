@@ -13,11 +13,13 @@ subplot(nx,ny,n), loglog(f,Pyy1,'r'), grid on
     title({strcat(red,'.',est,'.',comp,' - P')})
     ylabel ('Amplitud (m/Hz)'); xlabel('Frecuencia (Hz)')
     xlim([1.0E-03 5])
+    set(gca,'xtick',[1.0E-03,1.0E-02,1.0E-01,1.0])
 
 %%%%%%%%%%%%%%%%%%Graficando rectas del modelo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Df = f(2)-f(1); %Intervalo de frecuencia.
 nfc = floor(fc/Df)+1; %Ubicacion de la fc.
 U0 = mean(Pyy1(1:nfc)); %Valor promedio de la parte plana del espectro.
+text(fc,U0,'<--fc')
 
 nlim = 512; %Ubicacion limite de f a considerar para graficar.
 maxlimPyy1 = max(Pyy1(nlim-5:nlim)); %Amplitud max de 5 muestras antes.

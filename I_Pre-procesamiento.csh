@@ -3,11 +3,11 @@
 #==================================================================================
 echo ""
 echo "+==========================================================================+"
-echo "|                           SpectralSOURCE v1.0.0                          |"
+echo "|                           SpectralSOURCE v1.2.0                          |"
 echo "+==========================================================================+"
 echo "| -Parte 1: Spectral                                                       |"
 echo "| -Subparte 1: Pre-Procesamiento (I_Pre-procesamiento.csh)                 |"
-echo "| -Ultima actualizacion: 20/03/2020                                        |"
+echo "| -Ultima actualizacion: 09/07/2020                                        |"
 echo "+--------------------------------------------------------------------------+"
 echo "| -Copyright (C) 2020  Nestor Luna Diaz                                    |"
 echo "+--------------------------------------------------------------------------+"
@@ -48,6 +48,9 @@ echo ""
 
 ###################################################################################
 # CONDICIONES INICIALES:
+# 0) Modificar el metodo de archivo ingresado:
+#    Opciones: '1', '2'.
+#    ('1' es archivo seed, '2' son archivos SAC y PZ en el directorio de trabajo).
 # 1) Modificar el nombre del archivo seed a utilizar.
 # 2) Ingrese el número de componentes a utilizar. Opciones: 1 (BHZ) o 3 (BH1-2-Z).
 # 3) Ingrese el tipo de gráfico (señal original y deconv.) EPS.
@@ -68,6 +71,7 @@ set util_filtro = $5
 set f1 = $6
 set f2 = $7
 set np = $8
+set metodo_archivo = $9
 ###################################################################################
 echo "+--------------------------------------------------------------------------+"
 echo "|             --> EL PRE-PROCESAMIENTO INICIARÁ EN 5 s ... <--             |"
@@ -91,23 +95,65 @@ else if ($util_filtro == 0) then
 endif
 sleep 5
 
-# Extraer de SEED a SAC.
-./1.0_rdseed2sac_v1.0.csh $archivo_seed
-echo ''
+if ($metodo_archivo == 1) then
+    # Extraer de SEED a SAC.
+    ./1.0_rdseed2sac_v1.0.csh $archivo_seed
+    echo ''
+else if ($metodo_archivo == 2) then
+        # Remover archivos SAC no usados.
+        ./1.0_rm_sac_inv_v1.0.csh
+        echo ''
+endif
 
 # Renombrar SAC para facilitar tareas.
-if ($N_comp == 1) then
-    echo "  -Utilizando la componente: BHZ."
-    ./1.1_renombrar_BHZ_v1.0.sh
-    echo ""
-else if ($N_comp == 3) then
-        echo "  -Utilizando las componentes: BH1 (BHE), BH2 (BHN), BHZ."
-        ./1.2_renombrar_BH1-3_v1.0.sh
+# Verificar presencia de archivos ".SAC", "RESP". y "SACPZ.".
+
+if ($metodo_archivo == 1) then
+    set Nsac  = `ls *.SAC | wc -l`
+    set Nresp = `ls RESP.* | wc -l`
+    if ($Nsac > 0 && $Nresp >0) then
+        if ($N_comp == 1) then
+            echo "  -Utilizando la componente: BHZ."
+            ./1.1_renombrar_BHZ_v1.0.sh $9
+            echo ""
+        else if ($N_comp == 3) then
+                echo "  -Utilizando las componentes: BH1 (BHE), BH2 (BHN), BHZ. [¡ERROR: FALTA PROGRAMAR!]"
+                ./1.2_renombrar_BH1-3_v1.0.sh $9
+                echo ""
+             else
+                 echo "  -ADVERTENCIA: Opción (N_comp) incorrecta. Saliendo del programa."
+                 echo ""
+                 exit 1
+        endif
+    else
+        echo '[ERROR: Archivos ".SAC" y/o "RESP." no encontrados. Saliendo del programa]'
         echo ""
-     else
-         echo "  -ADVERTENCIA: Opción (N_comp) incorrecta. Saliendo del programa."
-         echo ""
-         exit 1
+        exit 1
+    endif
+endif
+
+if ($metodo_archivo == 2) then
+    set Nsac  = `ls *.SAC | wc -l`
+    set Npz   = `ls SACPZ.* | wc -l`
+    if ($Nsac > 0 && $Npz >0) then
+        if ($N_comp == 1) then
+            echo "  -Utilizando la componente: BHZ."
+            ./1.1_renombrar_BHZ_v1.0.sh $9
+            echo ""
+        else if ($N_comp == 3) then
+                echo "  -Utilizando las componentes: BH1 (BHE), BH2 (BHN), BHZ. [¡ERROR: FALTA PROGRAMAR!]"
+                ./1.2_renombrar_BH1-3_v1.0.sh $9
+                echo ""
+             else
+                 echo "  -ADVERTENCIA: Opción (N_comp) incorrecta. Saliendo del programa."
+                 echo ""
+                 exit 1
+        endif
+    else
+        echo '[ERROR: Archivos ".SAC" y/o "SACPZ." no encontrados. Saliendo del programa]'
+        echo ""
+        exit 1
+    endif
 endif
 
 # SAC2XY para calcular SNR. Extraer parametros hipocentrales.
@@ -134,11 +180,11 @@ echo ""
 # Deconvolucion - Remover respuesta instrumental.
 if ($util_filtro == 1) then
     echo "  -Deconvolución utilizando filtro (butterworth) Pasa-banda."
-    ./4.0_deconvolucion_integrando_v1.5.csh $f1 $f2 $np
+    ./4.0_deconvolucion_integrando_v1.5.csh $9 $f1 $f2 $np
     echo ""
 else if ($util_filtro == 0) then
         echo "  -Deconvolución sin utilizar filtro."
-        ./4.0_deconvolucion_integrando_v1.5.csh
+        ./4.0_deconvolucion_integrando_v1.5.csh $9
         echo ""
      else
          echo "  -ADVERTENCIA: Opción (util_filtro) incorrecta. Saliendo del programa."

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #==================================================================================
 #   +==========================================================================+  #
-#   |                           SpectralSOURCE v1.1.2                          |  #
+#   |                           SpectralSOURCE v1.2.0                          |  #
 #   +==========================================================================+  #
 #   | -Interfaz gráfica: PyQt5                                                 |  #
-#   | -Ultima actualizacion: 31/03/2020                                        |  #
+#   | -Ultima actualizacion: 01/07/2020                                        |  #
 #   +--------------------------------------------------------------------------+  #
 #   | -Copyright (C) 2020  Nestor Luna Diaz                                    |  #
 #   +--------------------------------------------------------------------------+  #
@@ -101,6 +101,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.check_filtro.clicked.connect(self.filtro_ui)
         self.check_SAC_delete.clicked.connect(self.SAC_delete_ui)
         self.check_graficar.clicked.connect(self.graficar_fft_ui)
+        self.check_archivos_SAC.clicked.connect(self.metodo_archivo_ui)
 
 #============================================================================================================
 #==========================================Principal: SOURCE=================================================
@@ -299,13 +300,14 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.list_est_delete.setEnabled(True)  # Se activa la lista de estaciones corruptas a eliminar.
         
     def limpiar_reiniciar(self):
-        comando_1 = "rm *.deconv *.fft *.SAC RESP* " + CAB_SAC + " "
+        comando_1 = "rm *.deconv *.fft *.SAC SACPZ.* *.SAC.PZ RESP* " + CAB_SAC + " "
         comando_1+= "-r " + backup_renombrar + " " + CARPETA_GRAF_single + " " + CARPETA_GRAF_dual
         process = subprocess.Popen(comando_1, shell=True)
         
         self.Boton_examinar.setEnabled(True)  # Se activa "Examinar".
         self.ruta_seed.setEnabled(True)       # Se activa la ruta del archivo seed.
         self.ruta_seed.setText("")            # Se elimina el contenido de ruta_seed.
+        self.check_archivos_SAC.setEnabled(True) # Se activa el check de archivos SAC y PZ.
         
         self.combo_graf.setEnabled(True)      # Se activa el combobox tipo de gráfico.
         
@@ -342,6 +344,15 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.filtro_02.setEnabled(True)
             self.num_p.setEnabled(True)
     
+    def metodo_archivo_ui(self):
+        if (self.check_archivos_SAC.isChecked()==False):
+            self.ruta_seed.setEnabled(True)        # Se activa la ruta del archivo seed.
+            self.Boton_examinar.setEnabled(True)   # Se activa "Examinar".
+        else:
+            self.ruta_seed.setEnabled(False)       # Se desactiva la ruta del archivo seed.
+            self.Boton_examinar.setEnabled(False)  # Se desactiva "Examinar".
+            self.ruta_seed.setText("")             # Se elimina el contenido de ruta_seed.
+    
     def abrir_seed(self):
         #ruta_actual = str(subprocess.Popen("pwd", shell=True))
         ruta_actual = os.getcwd()
@@ -357,11 +368,17 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         archivo_seed = self.ruta_seed.toPlainText()
         archivo_seed = archivo_seed.replace(ruta_actual+"/","")
         
-        f1 = self.filtro_01.toPlainText()
-        f2 = self.filtro_02.toPlainText()
+        f1 = str(self.filtro_01.value())
+        f2 = str(self.filtro_02.value())
         np = str(self.num_p.value())
         tipo_graf = self.combo_graf.currentText()
         N_comp = self.combo_comp.currentText()
+        
+        if (self.check_archivos_SAC.isChecked()==False):
+            metodo_archivo = "1"
+        else:
+            metodo_archivo = "2"
+            archivo_seed = "No_Aplica"
         
         if (self.check_filtro.isChecked()==True):
             util_filtro = "1"
@@ -374,7 +391,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             util_SNR = "0"
         
         comando_1 = "./I_Pre-procesamiento.csh"
-        comando_1+= " "+archivo_seed+" "+N_comp+" "+tipo_graf+" "+util_SNR+" "+util_filtro+" "+f1+" "+f2+" "+np
+        comando_1+= " "+archivo_seed+" "+N_comp+" "+tipo_graf+" "+util_SNR+" "+util_filtro+" "+f1+" "+f2+" "+np+" "+metodo_archivo
         process = subprocess.Popen(comando_1, shell=True)
         
         self.Run_Spectral_01.setEnabled(False) # Se desactiva "Spectral (Parte 1)".
@@ -387,6 +404,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.filtro_01.setEnabled(False)       # Se desactiva el filtro 1.
         self.filtro_02.setEnabled(False)       # Se desactiva el filtro 2.
         self.num_p.setEnabled(False)           # Se desactiva el número de polos.
+        self.check_archivos_SAC.setEnabled(False) # Se desactiva el check de archivos SAC y PZ.
         
         self.check_eliminar.setEnabled(True)   # Se activa el check eliminar archivos.
         self.check_SAC_delete.setEnabled(True) # Se activa el check eliminar estaciones corruptas.
@@ -413,16 +431,24 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def verificar(self):
         archivo_seed = self.ruta_seed.toPlainText()
-        f1 = self.filtro_01.toPlainText()
-        f2 = self.filtro_02.toPlainText()
+        f1 = str(self.filtro_01.value())
+        f2 = str(self.filtro_02.value())
         #np = self.num_p.value()
         #tipo_graf = self.combo_graf.currentText()
         error_filtro = 0
         
+        if (self.check_archivos_SAC.isChecked()==False):
+            metodo_archivo = "1"
+        else:
+            metodo_archivo = "2"
+        
         if (archivo_seed != "" and archivo_seed.find(".seed")>0):
             mensaje_01 = "- Archivo seed correcto."
         else:
-            mensaje_01 = "- ERROR: Archivo seed no ingresado."
+            if (self.check_archivos_SAC.isChecked()==False):
+                mensaje_01 = "- ERROR: Archivo seed no ingresado."
+            else:
+                mensaje_01 = "- Se usarán archivos SAC y PZ."
         
         if (self.check_filtro.isChecked()==True):
             if (f1.find(",") < 0):

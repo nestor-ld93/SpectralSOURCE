@@ -2,19 +2,18 @@
 # Script para cambiar de formato SEED a SAC
 # Nestor Luna - 20 Jan 2019
 
-echo '**************Script para cambiar de formato SEED a SAC***************'
-echo '************rdseed 5.3.1 & SAC 101.6a utilizados**********************'
+echo '**************Script para eliminar archivos SAC no usados*************'
 echo '************Creado por: Nestor Luna Diaz, 20 de enero de 2019*********'
-echo '**************Ultima modificacion, 20 de enero de 2019****************'
+echo '**************Ultima modificacion, 11 de julio de 2020****************'
 echo '**********************************************************************'
 echo ''
 
 # Ejecutable de rdseed. Modificarlo de ser necesario.
-set rdseed='/opt/rdseed/rdseed.rh6.linux_64'
+#set rdseed='/opt/rdseed/rdseed.rh6.linux_64'
 
 #set archivo_seed = '2007-08-15_mww8.0_Pisco.seed'
 
-$rdseed -f $1 -R -d -o 1
+#$rdseed -f $1 -R -d -o 1
 #echo '->Archivos a eliminar (registros de aceleración y redundantes):'
 rm *.01.BH*.SAC
 rm *.02.BH*.SAC
@@ -30,20 +29,20 @@ rm *.60.BH*.SAC
 rm *.70.BH*.SAC
 rm *.80.BH*.SAC
 rm *.XX.BH*.SAC
-rm RESP*.01.BH*
-rm RESP*.02.BH*
-rm RESP*.03.BH*
-rm RESP*.04.BH*
-rm RESP*.05.BH*
-rm RESP*.10.BH*
-rm RESP*.20.BH*
-rm RESP*.30.BH*
-rm RESP*.40.BH*
-rm RESP*.50.BH*
-rm RESP*.60.BH*
-rm RESP*.70.BH*
-rm RESP*.80.BH*
-rm RESP*.XX.BH*
+rm SACPZ*.01.BH*
+rm SACPZ*.02.BH*
+rm SACPZ*.03.BH*
+rm SACPZ*.04.BH*
+rm SACPZ*.05.BH*
+rm SACPZ*.10.BH*
+rm SACPZ*.20.BH*
+rm SACPZ*.30.BH*
+rm SACPZ*.40.BH*
+rm SACPZ*.50.BH*
+rm SACPZ*.60.BH*
+rm SACPZ*.70.BH*
+rm SACPZ*.80.BH*
+rm SACPZ*.XX.BH*
 
 #$rdseed -f pisco2007.seed -p -d -o 1
 #rm *.10.BH*.SAC
@@ -52,13 +51,13 @@ rm RESP*.XX.BH*
 echo ''
 echo '*******************************Resumen********************************'
 echo ''
-echo '->Archivos ".SAC" (formato SAC binario) creados:'
+echo '->Archivos ".SAC" (formato SAC binario) a utilizar:'
 ls *.SAC | wc -l
 ls *.SAC
 echo ''
-echo '->Archivos "RESP*.BH*" (Respuesta instrumental) creados:'
-ls RESP*.BH* | wc -l
-ls RESP*.BH*
+echo '->Archivos "SACPZ*.BH*" (Polos y zeros) a utilizar:'
+ls SACPZ*.BH* | wc -l
+ls SACPZ*.BH*
 
 echo ''
 echo '**************************Fin del programa****************************'
