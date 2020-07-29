@@ -12,7 +12,7 @@ rm $CAB_SAC
 
 foreach file ( *.SAC )
 sac2xy $file ${file}.xy
-saclst KZDATE GCARC DIST EVLA EVLO EVDP MAG DELTA KNETWK KSTNM KCMPNM f $file >> $CAB_SAC
+saclst KZDATE GCARC AZ EVLA EVLO EVDP MAG DELTA KNETWK KSTNM KCMPNM f $file >> $CAB_SAC
 end
 
 echo ''
@@ -24,7 +24,7 @@ ls *.SAC.xy
 
 echo ''
 echo "->Archivo '$CAB_SAC' (ASCII de parametros hipocentrales) contenido:"
-echo '   { [Archivo SAC] [Fecha] [Dist. epi. (grados)] [Dist. epi. (km)] [Lat. evento]...'
+echo '   { [Archivo SAC] [Fecha] [Dist. epi. (grados)] [Azim. (grados)] [Lat. evento]...'
 echo '  ...[Lon. evento] [Prof. evento (km)] [Mag. evento] [Dt (s)] }'
 
 mv *.xy $SNR_CARPETA

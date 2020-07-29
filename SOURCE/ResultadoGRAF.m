@@ -46,6 +46,7 @@ fc = datos(:,2);
 %%%%%%%%%%%
 subLeer('[LISTA_xy].txt','[HIPO_IRIS].txt')
 Delta_gr = Hipo(:,1);       %Distancia epicentral en grados.
+Azim_gr = Hipo(:,2);        %Azimuth de estacion en grados.
 
 i_fig = 1; %Contador de numero de figuras.
 i_plot = 1; %Contador de graficos en una figura (nx*ny como max).
@@ -59,7 +60,7 @@ for i=1:n_archivos
     Pyy1 = Pyy.*q; %Correccion por atenuacion.
     if i_plot <= n_plot
         subGraficar1fcfinal(red{i},est{i},comp{i},f,Pyy1,M0(i),fc(i),...
-                            Delta_gr(i),i_plot,nx,ny)
+                            Delta_gr(i),Azim_gr(i),i_plot,nx,ny)
     else
         if gen_graf == 1
             if tipo_graf == 'png'
@@ -80,7 +81,7 @@ for i=1:n_archivos
         i_plot = 1;
         figure
         subGraficar1fcfinal(red{i},est{i},comp{i},f,Pyy1,M0(i),fc(i),...
-                            Delta_gr(i),i_plot,nx,ny)
+                            Delta_gr(i),Azim_gr(i),i_plot,nx,ny)
         i_fig = i_fig+1;
     end
     i_plot = i_plot+1;

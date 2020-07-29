@@ -11,7 +11,7 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 
 ![app menu](https://lh3.googleusercontent.com/-4ctEGX_p5W0/XwpEfPhPx5I/AAAAAAAABHs/lvDD_9D9Cr8oDl-0zveYcZ_ye_ln67CfgCLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_01.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: Spectral")
 ![app menu](https://lh3.googleusercontent.com/-dCcVLp9dDVw/Xv5H499in4I/AAAAAAAABGI/oIu94dGon2otdcmMXlXjJBBMnfVjVFQ7ACLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_02.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: SOURCE")
-![app menu](https://lh3.googleusercontent.com/-3aHZD1JlgA0/Xv5H5OHXLwI/AAAAAAAABGQ/Y6ZZyg2YW5UM7txgiHgys0GgN2L8jiTLwCLcBGAsYHQ/h864/Figura-2.png "Principales espectros de desplazamiento para el sismo de Arequipa del 23 de junio del 2001 - Perú")
+![app menu](https://lh3.googleusercontent.com/-djVoGL9b4Ec/XyH71kGMjOI/AAAAAAAABIU/ATulrltTFwobK3YjrNVyZCFN4Mma0p_lQCLcBGAsYHQ/h864/Figura-2.png "Principales espectros de desplazamiento para el sismo de Arequipa del 23 de junio del 2001 - Perú")
 
 ## RECOMENDACIONES
 - Utilizar registros en formato SEED (IRIS hasta el 2019). Si no es posible, utilizar archivos SAC más archivos de polos y zeros (IRIS desde el 2020).
@@ -68,4 +68,7 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - (v1.2.0) [20/07/2020] Script **1.1_renombrar_BHZ_v1.0.sh** mejorado para tener en cuenta la nueva nomenclatura (nombre de archivos SAC) del IRIS al utilizar señales descargadas en formato SAC little-endian o big-endian.
 - (v1.2.0) [20/07/2020] Se reemplazó los TextEdit por SpinBox de los filtros.
 - (v1.2.0) [20/07/2020] Se agregaron detalles a los gráficos finales.
-
+- (v1.2.1) [29/07/2020] Se reemplazó Distancia epicentral (km) por Azimuth (°) en **HIPO_IRIS.txt** (columna 4).
+- (v1.2.1) [29/07/2020] Los gráficos finales incluyen el valor del Azimuth para cada estación.
+- (v1.2.1) [29/07/2020] Agregado Distancia epicentral (°) y Azimuth (°) en **[SALIDA_ESTACIONES].txt**.
+- (v1.2.1) [29/07/2020] Si IRIS no proporciona un valor de magnitud (archivos SAC) será reemplazado por NaN.

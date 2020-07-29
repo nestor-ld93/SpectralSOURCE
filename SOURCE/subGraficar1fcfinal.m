@@ -1,4 +1,4 @@
-function subGraficar1fcfinal(red,est,comp,f,Pyy1,M0,fc,Delta_gr,n,nx,ny)
+function subGraficar1fcfinal(red,est,comp,f,Pyy1,M0,fc,Delta_gr,Azim_gr,n,nx,ny)
 % Graficador FFT final (1 fc) de ResultadoGRAF
 % Plotea 06 graficos en una ventana.
 %%%%% Creado por: Nestor Luna Diaz - 20 de febrero de 2019 %%%%%%%%%%%%%%%%
@@ -7,7 +7,8 @@ function subGraficar1fcfinal(red,est,comp,f,Pyy1,M0,fc,Delta_gr,n,nx,ny)
 %figure('Name',num2mstr(6))
 txt = {strcat('M0=',' ',sprintf('%.2E',M0),' N.m'),...
        strcat('fc=',' ',sprintf('%.2f',fc),' Hz'),...
-       strcat('Dist=',' ',sprintf('%.2f',Delta_gr),'°')};
+       strcat('Dist=',' ',sprintf('%.2f',Delta_gr),'°'),...
+       strcat('Azim=',' ',sprintf('%.2f',Azim_gr),'°')};
 subplot(nx,ny,n), loglog(f,Pyy1,'r'), grid on
     text(min(f)+1.5E-03,min(Pyy1)+1.0E-15,txt)
     title({strcat(red,'.',est,'.',comp,' - P')})

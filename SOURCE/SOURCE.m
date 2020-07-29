@@ -39,14 +39,14 @@ tipo_graf = 'eps'; %eps o png.
 subLeer('[LISTA_xy].txt','[HIPO_IRIS].txt')
 
 cabecero = [' N ','  Red  Estacion  Comp','     M0 (N.m)',...
-            '   fc (Hz)','       Mw','      E_Mw'];
+            '   fc (Hz)','   Dist (°)','    Azim (°)'];
 
 fileID3 = fopen('[SALIDA_ESTACIONES].txt','w');
 fprintf(fileID3,'%s\n',cabecero);
 
 %%%%%%%%%%%%%%%%%%%Extraccion de datos de interes%%%%%%%%%%%%%%%%%%%%
 H_0 = Hipo(1,5);            %Profundidad del evento.
-Mw_ref = Hipo(1,6);         %Magnitud Momento referencial.
+%Mw_ref = Hipo(1,6);         %Magnitud Momento IRIS.
 
 %%%%%%%%%%%%%%%%%%Inicio del bucle para cada archivo%%%%%%%%%%%%%%%%%
 for i=1:n_archivos
@@ -55,7 +55,7 @@ B = load(Lista_xy{i});
 %%%%%%%%%%%%%%%%%%%Extraccion de datos de interes%%%%%%%%%%%%%%%%%%%%
 f = B(:,1); Pyy = B(:,2);
 Delta_gr = Hipo(i,1);       %Distancia epicentral en grados.
-%Delta_km = Hipo(i,2);       %Distancia epicentral en km.       
+Azim_gr = Hipo(i,2);        %Azimuth de estacion en grados.       
 
 %%%%%%%%%%%%%%%%%Constantes y Datos del modelo PREM%%%%%%%%%%%%%%%%%%
 subPREM(H_0)
@@ -78,11 +78,11 @@ subGraficar1fc(Lista_xy{i},red{i},est{i},comp{i},f,Pyy,Pyy1,gen_graf,tipo_graf)
 
 M0 = U0*4*pi*rho_0*vp_0^3/(2.0*0.42*g); %Momento sismico escalar (N.m).
 Mw = 2/3*log10(M0)-6.07; %Magnitud Momento.
-E_Mw = abs((Mw-Mw_ref)/Mw_ref)*100; %Error porcentual de Mw.
+%E_Mw = abs((Mw-Mw_ref)/Mw_ref)*100; %Error porcentual de Mw.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Escribir resultados%%%%%%%%%%%%%%%%%%%%%%%%%%
-fprintf(fileID3,'%2d %5s %9s %5s %12.4E %9.4f %8.4f %9.4f\n',...
-         i,red{i},est{i},comp{i},M0,fc,Mw,E_Mw);
+fprintf(fileID3,'%2d %5s %9s %5s %12.4E %9.4f %10.4f %11.4f\n',...
+         i,red{i},est{i},comp{i},M0,fc,Delta_gr,Azim_gr);
 
 end
 fclose(fileID3);

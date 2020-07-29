@@ -53,7 +53,7 @@ fileID3 = fopen('[SALIDA_FINAL].txt','w');
 cabecero_b1 = ['======================================================',...
                '============='];
 cabecero_01 = ['   M0 (N.m)','  Std M0 (N.m)','   fc (Hz)',...
-               '  Std fc (Hz)','       Mw','      E_Mw'];
+               '  Std fc (Hz)','       Mw','    Mw_ref'];
 cabecero_02 = ['       Modelo','       r (km)','       L (km)',...
                '       W (km)','      Area (km^2)','  Dsig. (MPa)','     Du (m)'];
 cabecero_b2 = ['======================================================',...
@@ -71,7 +71,7 @@ mu_0 = rho_0*vs_0^2; % Modulo de rigidez (Pa = kg.m^-1.s^-2).
 M0 = mean(datos(:,1));
 fc = mean(datos(:,2));
 Mw = 2/3*log10(M0)-6.07; %Magnitud Momento.
-E_Mw = abs((Mw-Mw_ref)/Mw_ref)*100; %Error porcentual de Mw.
+%E_Mw = abs((Mw-Mw_ref)/Mw_ref)*100; %Error porcentual de Mw.
 
 desv_M0 = std(datos(:,1)); %Desviacion estandar de M0.
 desv_fc = std(datos(:,2)); %Desviacion estandar de fc.
@@ -135,7 +135,11 @@ D_sigma_Pa = 8/(3*pi*W_Pa^2*L_Pa)*M0*1.0E-15; % Caida de esfuerzos promedio (MPa
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%Escribir resultados%%%%%%%%%%%%%%%%%%%%%%%%%%
 fprintf('%s\n%s\n%s\n',cabecero_b1,cabecero_01,cabecero_b1);
-fprintf('%11.4E %13.4E %9.4f %12.4f %8.4f %9.4f\n',M0,desv_M0,fc,desv_fc,Mw,E_Mw);
+if Mw_ref == -12345
+    fprintf('%11.4E %13.4E %9.4f %12.4f %8.4f %9s\n',M0,desv_M0,fc,desv_fc,Mw,'NaN');
+    else
+        fprintf('%11.4E %13.4E %9.4f %12.4f %8.4f %9.4f\n',M0,desv_M0,fc,desv_fc,Mw,Mw_ref);
+end
 fprintf('%s\n\n',cabecero_b1);
 fprintf('%s\n%s\n%s\n',cabecero_b2,cabecero_02,cabecero_b2);
 fprintf('%13s %12.4f %12s %12s %16.4f %12.4f %10.4f\n',...
@@ -151,7 +155,11 @@ fprintf('%13s %12s %12.4f %12.4f %16.4f %12.4f %10.4f\n',...
 fprintf('%s\n',cabecero_b2);
 
 fprintf(fileID3,'%s\n%s\n%s\n',cabecero_b1,cabecero_01,cabecero_b1);
-fprintf(fileID3,'%11.4E %13.4E %9.4f %12.4f %8.4f %9.4f\n',M0,desv_M0,fc,desv_fc,Mw,E_Mw);
+if Mw_ref == -12345
+    fprintf(fileID3,'%11.4E %13.4E %9.4f %12.4f %8.4f %9s\n',M0,desv_M0,fc,desv_fc,Mw,'NaN');
+    else
+        fprintf(fileID3,'%11.4E %13.4E %9.4f %12.4f %8.4f %9.4f\n',M0,desv_M0,fc,desv_fc,Mw,Mw_ref);
+end
 fprintf(fileID3,'%s\n\n',cabecero_b1);
 fprintf(fileID3,'%s\n%s\n%s\n',cabecero_b2,cabecero_02,cabecero_b2);
 fprintf(fileID3,'%13s %12.4f %12s %12s %16.4f %12.4f %10.4f\n',...
