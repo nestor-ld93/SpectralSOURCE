@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #==================================================================================
 #   +==========================================================================+  #
-#   |                           SpectralSOURCE v1.2.0                          |  #
+#   |                           SpectralSOURCE v1.3.0                          |  #
 #   +==========================================================================+  #
 #   | -Interfaz gráfica: PyQt5                                                 |  #
-#   | -Ultima actualizacion: 01/07/2020                                        |  #
+#   | -Ultima actualizacion: 21/09/2020                                        |  #
 #   +--------------------------------------------------------------------------+  #
 #   | -Copyright (C) 2020  Nestor Luna Diaz                                    |  #
 #   +--------------------------------------------------------------------------+  #
@@ -89,6 +89,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Boton_limpiar_3.clicked.connect(self.limpiar_reiniciar_3)
         self.Boton_mostrar_res.clicked.connect(self.Mostrar_resultados)
         self.Boton_txt_externo.clicked.connect(self.Archivos_txt_externos)
+        self.Boton_txt_externo_2.clicked.connect(self.Archivos_txt_externos_2)
         
         self.Run_Spectral_01.clicked.connect(self.Spectral_01)
         self.Run_Spectral_02.clicked.connect(self.Spectral_02)
@@ -97,16 +98,28 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Run_SOURCE_03.clicked.connect(self.SOURCE_03)
         self.Run_SOURCE_04.clicked.connect(self.SOURCE_04)
         self.Run_SOURCE_05.clicked.connect(self.SOURCE_05)
+        self.Run_SOURCE_04_1.clicked.connect(self.SOURCE_04_1)
+        self.Run_SOURCE_05_1.clicked.connect(self.SOURCE_05_1)
         
         self.check_filtro.clicked.connect(self.filtro_ui)
         self.check_SAC_delete.clicked.connect(self.SAC_delete_ui)
         self.check_graficar.clicked.connect(self.graficar_fft_ui)
         self.check_archivos_SAC.clicked.connect(self.metodo_archivo_ui)
+        self.check_resultados_num.clicked.connect(self.resultados_num_ui)
 
 #============================================================================================================
 #==========================================Principal: SOURCE=================================================
 #============================================================================================================
-        
+    
+    def resultados_num_ui(self):
+        if (self.check_resultados_num.isChecked()==False):
+            self.check_fc.setEnabled(False)  # Se desactiva fc.
+            self.check_fc.setChecked(False)  # No check a fc
+            
+        else:
+            self.check_fc.setEnabled(True)   # Se activa fc.
+            #self.check_fc.setChecked(True)   # Check a fc.
+    
     def graficar_fft_ui(self):
         if (self.check_graficar.isChecked()==False):
             self.combo_graf_2.setEnabled(False)  # Se desactiva el tipo de gráficos.
@@ -129,6 +142,30 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.check_graficar.setEnabled(True)     # Se activa el check para graficar.
         self.combo_graf_2.setEnabled(True)       # Se activa el combobox para seleccionar formato de gráfico.
         self.combo_falla.setEnabled(True)        # Se activa el combobox para seleccionar tipo de falla.
+        
+    def Archivos_txt_externos_2(self):
+        self.Run_SOURCE_04_1.setEnabled(True)    # Se activa "SOURCE (Parte 4)".
+        self.combo_graf_3.setEnabled(True)       # Se activa el combobox para seleccionar formato de gráfico.
+        self.Hoja_ancho.setEnabled(True)
+        self.Hoja_alto.setEnabled(True)
+        self.num_filas.setEnabled(True)
+        self.num_columnas.setEnabled(True)
+        
+        self.nombre_eje_x.setEnabled(True)
+        self.nombre_eje_y.setEnabled(True)
+        self.combo_tipo_ejes.setEnabled(True)
+        
+        self.Size_titulo.setEnabled(True)
+        self.Size_contenido.setEnabled(True)
+        self.Size_ejes.setEnabled(True)
+        
+        self.Grosor_Pyy.setEnabled(True)
+        self.Grosor_ajuste.setEnabled(True)
+        
+        self.check_grilla.setEnabled(True)
+        self.check_resultados_num.setEnabled(True)
+        self.check_fc.setEnabled(True)
+        
         
     def Mostrar_resultados(self): # Muestra los resultados (textos) dentro de "Principal: SOURCE"
         self.Resultados_01.setText("")
@@ -195,18 +232,84 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             gen_graf = '1'
             tipo_graf = self.combo_graf_2.currentText()
         
+        #comando_01 = 'matlab -r "gen_graf='+gen_graf+';'+'tipo_graf='+"'"+tipo_graf+"'"+';run('
+        #comando_01+= "'"+ruta_actual+"/"+CARPETA_SOURCE+"/"+SOURCE_P4+"'"+');exit"'
         
-        comando_01 = 'matlab -r "gen_graf='+gen_graf+';'+'tipo_graf='+"'"+tipo_graf+"'"+';run('
-        comando_01+= "'"+ruta_actual+"/"+CARPETA_SOURCE+"/"+SOURCE_P4+"'"+');exit"'
+        comando_01 = 'matlab -r "gen_graf='+gen_graf+';'+'tipo_graf='+"'"+tipo_graf+"'"+';'
+        comando_01+= 'paper_size_W='+'22.86'+';'+'paper_size_L='+'20.32'+';'
+        comando_01+= 'nx='+'2'+';'+'ny='+'3'+';'+'tipo_ejes='+'1'+';'
+        comando_01+= 'grilla='+'1'+';'+'resultados_num='+'1'+';'
+        comando_01+= 'show_fc='+'1'+';'+'titulo_size='+'11'+';'
+        comando_01+= 'contenido_size='+'10'+';'+'ejes_size='+'15'+';'
+        comando_01+= 'grosor_fft='+'1.0'+';'+'grosor_curva='+'1.5'+';'
+        comando_01+= 'label_x='+"'"+'Frecuencia (Hz)'+"'"+';'+'label_y='+"'"+'Amplitud (m/Hz)'+"'"+';'
+        comando_01+= ';run('+"'"+ruta_actual+"/"+CARPETA_SOURCE+"/"+SOURCE_P4+"'"+');exit"'
         process = subprocess.Popen(comando_01, shell=True)
         
         self.Run_SOURCE_05.setEnabled(True)    # Se activa "SOURCE (Parte 5)".
+        
+    def SOURCE_04_1(self):
+        gen_graf = '1'
+        
+        tipo_graf = self.combo_graf_3.currentText()
+        paper_size_W = str(self.Hoja_ancho.value())
+        paper_size_L = str(self.Hoja_alto.value())
+        nx = str(self.num_filas.value())
+        ny = str(self.num_columnas.value())
+        label_x = str(self.nombre_eje_x.toPlainText())
+        label_y = str(self.nombre_eje_y.toPlainText())
+        
+        tipo_ejes_text = self.combo_tipo_ejes.currentText()
+        if (tipo_ejes_text == 'General'):
+            tipo_ejes = '2'
+        if (tipo_ejes_text == 'Subetiqueta'):
+            tipo_ejes = '1'
+        
+        titulo_size = str(self.Size_titulo.value())
+        contenido_size = str(self.Size_contenido.value())
+        ejes_size = str(self.Size_ejes.value())
+        grosor_fft = str(self.Grosor_Pyy.value())
+        grosor_curva = str(self.Grosor_ajuste.value())
+        
+        if (self.check_grilla.isChecked()==True):
+            grilla = '1'
+        else:
+            grilla = '0'
+            
+        if (self.check_resultados_num.isChecked()==True):
+            resultados_num = '1'
+        else:
+            resultados_num = '0'
+            
+        if (self.check_fc.isChecked()==True):
+            show_fc = '1'
+        else:
+            show_fc = '0'
+        
+        comando_01 = 'matlab -r "gen_graf='+gen_graf+';'+'tipo_graf='+"'"+tipo_graf+"'"+';'
+        comando_01+= 'paper_size_W='+paper_size_W+';'+'paper_size_L='+paper_size_L+';'
+        comando_01+= 'nx='+nx+';'+'ny='+ny+';'+'tipo_ejes='+tipo_ejes+';'
+        comando_01+= 'grilla='+grilla+';'+'resultados_num='+resultados_num+';'
+        comando_01+= 'show_fc='+show_fc+';'+'titulo_size='+titulo_size+';'
+        comando_01+= 'contenido_size='+contenido_size+';'+'ejes_size='+ejes_size+';'
+        comando_01+= 'grosor_fft='+grosor_fft+';'+'grosor_curva='+grosor_curva+';'
+        comando_01+= 'label_x='+"'"+label_x+"'"+';'+'label_y='+"'"+label_y+"'"+';'
+        comando_01+= ';run('+"'"+ruta_actual+"/"+CARPETA_SOURCE+"/"+SOURCE_P4+"'"+');exit"'
+        process = subprocess.Popen(comando_01, shell=True)
+        
+        self.Run_SOURCE_05_1.setEnabled(True)    # Se activa "SOURCE (Parte 5)".
         
     def SOURCE_05(self):
         comando_01 = "./"+CARPETA_SOURCE+"/"+SOURCE_P5
         process = subprocess.Popen(comando_01, shell=True)
         
         self.Run_SOURCE_05.setEnabled(False)   # Se desactiva "SOURCE (Parte 5)".
+        
+    def SOURCE_05_1(self):
+        comando_01 = "./"+CARPETA_SOURCE+"/"+SOURCE_P5
+        process = subprocess.Popen(comando_01, shell=True)
+        
+        self.Run_SOURCE_05_1.setEnabled(False)   # Se desactiva "SOURCE (Parte 5)".
         
     def limpiar_reiniciar_2(self):
         comando_01 = "./"+CARPETA_SOURCE+"/"+SOURCE_P6

@@ -9,14 +9,16 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 
 ## IMÁGENES PRINCIPALES (en KDE Plasma 5.19)
 
-![app menu](https://lh3.googleusercontent.com/-4ctEGX_p5W0/XwpEfPhPx5I/AAAAAAAABHs/lvDD_9D9Cr8oDl-0zveYcZ_ye_ln67CfgCLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_01.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: Spectral")
-![app menu](https://lh3.googleusercontent.com/-dCcVLp9dDVw/Xv5H499in4I/AAAAAAAABGI/oIu94dGon2otdcmMXlXjJBBMnfVjVFQ7ACLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_02.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: SOURCE")
+![app menu](https://lh3.googleusercontent.com/-eHlAFbOYRu8/X2k_mpOUxzI/AAAAAAAABLs/xOujU6437BsNiurVKM9BHNZBjh03EohwQCLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_01.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: Spectral")
+![app menu](https://lh3.googleusercontent.com/-fgcGzpxn1jE/X2k_msP1_8I/AAAAAAAABLw/h2Gz70N1cGsjIN9Po9DN5ljTuuM-bfEkQCLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_02.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: SOURCE")
+![app menu](https://lh3.googleusercontent.com/-knDSFv9BLo0/X2k_mfiaPXI/AAAAAAAABLo/HB4L1ikK0VYjmnaKSitKG-54jYMbU8SmACLcBGAsYHQ/h809/SpectralSOURCE_PyQt5_03.png "Interfaz gráfica en PyQt5 de SpectralSOURCE: ResultadoGRAF - Avanzado")
 ![app menu](https://lh3.googleusercontent.com/-djVoGL9b4Ec/XyH71kGMjOI/AAAAAAAABIU/ATulrltTFwobK3YjrNVyZCFN4Mma0p_lQCLcBGAsYHQ/h864/Figura-2.png "Principales espectros de desplazamiento para el sismo de Arequipa del 23 de junio del 2001 - Perú")
 
 ## RECOMENDACIONES
 - Utilizar registros en formato SEED (IRIS hasta el 2019). Si no es posible, utilizar archivos SAC más archivos de polos y zeros (IRIS desde el 2020).
 - Utilizar registros de estaciones de banda ancha en la componente vertical (BHZ) de la red internacional IRIS a una distancia epicentral de 30°-90°.
 - Utilizar señales con 1 min antes del primer arribo de la onda P y 5 min después de S.
+- Utilizar una distribución de GNU/Linux con escritorio KDE Plasma 5.12 o superior.
 
 ## REQUISITOS MÍNIMOS
 - rdseed 5.3.1 o superior (https://github.com/iris-edu-legacy/rdseed)
@@ -27,7 +29,7 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - MATLAB 8.5 (2015a)
 - python3
 - python3-pyqt5
-- GNU Linux (Kernel 4.15) 64-bit [Se recomienda una distribución con KDE Plasma 5.12 o superior]
+- GNU Linux (Kernel 4.15) 64-bit
 
 ## ¿CÓMO DESCARGAR?
 - Para obtener la última versión estable, descargue desde la pestaña [[Releases](https://github.com/nestor-ld93/SpectralSOURCE/releases)].
@@ -72,3 +74,6 @@ Las salidas generadas por **SpectralSOURCE** son las siguientes:
 - (v1.2.1) [29/07/2020] Los gráficos finales incluyen el valor del Azimuth para cada estación.
 - (v1.2.1) [29/07/2020] Agregado Distancia epicentral (°) y Azimuth (°) en **[SALIDA_ESTACIONES].txt**.
 - (v1.2.1) [29/07/2020] Si IRIS no proporciona un valor de magnitud (archivos SAC) será reemplazado por NaN.
+- (v1.3.0) [29/09/2020] Mejora en el renderizado vectorial.
+- (v1.3.0) [29/09/2020] 'ResultadoGRAF.m' es más personalizable.
+- (v1.3.0) [29/09/2020] Añadida nueva pestaña: 'ResultadoGRAF - Avanzado'. Ahora es posible personalizar algunas opciones de los gráficos finales.

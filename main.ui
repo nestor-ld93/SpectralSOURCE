@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="Recursos/logos.qrc">
-    <normaloff>:/icono/semiconductor.png</normaloff>:/icono/semiconductor.png</iconset>
+    <normaloff>:/icono/logo_sismo_blanco.svg</normaloff>:/icono/logo_sismo_blanco.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -45,7 +45,7 @@
    <widget class="QLabel" name="Titulo_programa">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>280</x>
       <y>8</y>
       <width>261</width>
       <height>31</height>
@@ -122,12 +122,12 @@
      <rect>
       <x>10</x>
       <y>4</y>
-      <width>180</width>
+      <width>261</width>
       <height>34</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/logo_final/logo_final.png);
+     <string notr="true">border-image: url(:/logo_final/Logo_SpectralSOURCE.svg);
 background-color: transparent;</string>
     </property>
     <property name="text">
@@ -196,31 +196,6 @@ background-color: transparent;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ruta del archivo seed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="check_filtro">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>140</y>
-        <width>201</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Utilizar filtro Butterworth</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
      <widget class="QPushButton" name="Boton_verificar">
       <property name="geometry">
        <rect>
@@ -232,286 +207,6 @@ background-color: transparent;</string>
       </property>
       <property name="text">
        <string>Verificar parámetros ...</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="num_p">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>190</y>
-        <width>52</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="maximum">
-       <number>5</number>
-      </property>
-      <property name="value">
-       <number>5</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_9">
-      <property name="geometry">
-       <rect>
-        <x>262</x>
-        <y>160</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;n&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_5">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>110</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Filtro pasa-banda&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_6">
-      <property name="geometry">
-       <rect>
-        <x>42</x>
-        <y>160</y>
-        <width>51</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt; (Hz)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_7">
-      <property name="geometry">
-       <rect>
-        <x>152</x>
-        <y>160</y>
-        <width>51</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt; (Hz)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="check_SNR">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>120</y>
-        <width>121</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Utilizar SNR</string>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_11">
-      <property name="geometry">
-       <rect>
-        <x>550</x>
-        <y>180</y>
-        <width>221</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Graficar sismogramas (.eps)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_Spectral_02">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>380</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Spectral (Parte 2)</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_Spectral_01">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>340</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Spectral (Parte 1)</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_10">
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>179</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de componentes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="combo_graf">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>550</x>
-        <y>208</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>none</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>single</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>dual</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QCheckBox" name="check_eliminar">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>150</y>
-        <width>301</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Eliminar archivos innecesarios (generados)</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_2">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>290</y>
-        <width>200</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;INICIAR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Subtitulo_01">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>198</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(1 = BHZ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="Mostrar_errores">
@@ -548,55 +243,6 @@ background-color: transparent;</string>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="combo_comp">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>208</y>
-        <width>41</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="Line" name="line">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>120</y>
-        <width>20</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-     <widget class="Line" name="line_2">
-      <property name="geometry">
-       <rect>
-        <x>500</x>
-        <y>260</y>
-        <width>20</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
      <widget class="QPlainTextEdit" name="list_est_delete">
@@ -656,38 +302,6 @@ background-color: transparent;</string>
        <string>Proceder</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Boton_limpiar">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>440</y>
-        <width>161</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Limpiar todo y reiniciar</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_3">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>420</y>
-        <width>211</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
      <widget class="QCheckBox" name="check_archivos_SAC">
       <property name="enabled">
        <bool>true</bool>
@@ -707,70 +321,12 @@ background-color: transparent;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QDoubleSpinBox" name="filtro_01">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>190</y>
-        <width>104</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="decimals">
-       <number>3</number>
-      </property>
-      <property name="singleStep">
-       <double>0.001000000000000</double>
-      </property>
-      <property name="value">
-       <double>0.002000000000000</double>
-      </property>
-     </widget>
-     <widget class="QDoubleSpinBox" name="filtro_02">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>190</y>
-        <width>104</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="decimals">
-       <number>3</number>
-      </property>
-      <property name="singleStep">
-       <double>0.001000000000000</double>
-      </property>
-      <property name="value">
-       <double>0.100000000000000</double>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Subtitulo_4">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>218</y>
-        <width>141</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(3 = BH1, BH2 y BHZ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="Line" name="line_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>1</x>
         <y>100</y>
-        <width>731</width>
+        <width>751</width>
         <height>16</height>
        </rect>
       </property>
@@ -798,223 +354,477 @@ background-color: transparent;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(IRIS hasta 2019)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>110</y>
+        <width>421</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Titulo_11">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>70</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Graficar sismogramas (.eps)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_01">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>88</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(1 = BHZ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_graf">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>98</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>none</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>single</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>dual</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_4">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>108</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(3 = BH1, BH2 y BHZ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>69</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de componentes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_comp">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>98</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QCheckBox" name="check_SNR">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Utilizar SNR</string>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="check_eliminar">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>301</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Eliminar archivos innecesarios (generados)</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>311</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSpinBox" name="num_p">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>80</y>
+         <width>52</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>5</number>
+       </property>
+       <property name="value">
+        <number>5</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_9">
+       <property name="geometry">
+        <rect>
+         <x>252</x>
+         <y>50</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;n&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="filtro_02">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>80</y>
+         <width>104</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>3</number>
+       </property>
+       <property name="singleStep">
+        <double>0.001000000000000</double>
+       </property>
+       <property name="value">
+        <double>0.100000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Filtro pasa-banda&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="check_filtro">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>201</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Utilizar filtro Butterworth</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_7">
+       <property name="geometry">
+        <rect>
+         <x>142</x>
+         <y>50</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt; (Hz)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="filtro_01">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>80</y>
+         <width>104</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>3</number>
+       </property>
+       <property name="singleStep">
+        <double>0.001000000000000</double>
+       </property>
+       <property name="value">
+        <double>0.002000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_6">
+       <property name="geometry">
+        <rect>
+         <x>32</x>
+         <y>50</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; font-size:12pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt; (Hz)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>272</y>
+        <width>241</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="Boton_limpiar">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>170</y>
+         <width>161</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Limpiar todo y reiniciar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>200</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;INICIAR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>150</y>
+         <width>201</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_Spectral_02">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>110</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Spectral (Parte 2)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_Spectral_01">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Spectral (Parte 1)</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
       <string>Principal: SOURCE</string>
      </attribute>
-     <widget class="QPushButton" name="Run_SOURCE_01">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>30</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>1. Listar archivos</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_SOURCE_02">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>70</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>2. SOURCE.m</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_SOURCE_03">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>110</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>3. Resultado.m</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Titulo_3">
-      <property name="geometry">
-       <rect>
-        <x>437</x>
-        <y>0</y>
-        <width>200</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;INICIAR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="combo_falla">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>32</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>1. Dip-Slip (Subducción)</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>2. Normal Dip-Slip (Continental)</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>3. Strike-Slip</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="Titulo_12">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>0</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Paytone One</family>
-        <italic>false</italic>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tipo de falla (Papazachos)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="combo_graf_2">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>110</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>eps</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>png</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QCheckBox" name="check_graficar">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>80</y>
-        <width>231</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Generar gráficos finales</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Boton_limpiar_2">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>110</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Limpiar resultados y reiniciar</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_SOURCE_04">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>30</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>4. ResultadoGRAF.m</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Run_SOURCE_05">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>70</y>
-        <width>200</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>5. Ordenar gráficos</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="Boton_limpiar_3">
       <property name="enabled">
        <bool>true</bool>
@@ -1032,19 +842,6 @@ background-color: transparent;</string>
       </property>
       <property name="text">
        <string>Limpiar todos los archivos y reiniciar</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_5">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>10</y>
-        <width>20</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
      <widget class="QPushButton" name="Boton_mostrar_res">
@@ -1176,6 +973,1162 @@ background-color: transparent;</string>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;([HIPO_IRIS].txt; [LISTA_xy].txt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+     </widget>
+     <widget class="QFrame" name="frame_9">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>3</y>
+        <width>461</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="Boton_limpiar_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>120</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Limpiar resultados y reiniciar</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_SOURCE_02">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>2. SOURCE.m</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_SOURCE_04">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>40</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>4. ResultadoGRAF.m (simple)</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_3">
+       <property name="geometry">
+        <rect>
+         <x>127</x>
+         <y>5</y>
+         <width>200</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;INICIAR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_SOURCE_03">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>3. Resultado.m</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_SOURCE_01">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>1. Listar archivos</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Run_SOURCE_05">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>80</y>
+         <width>200</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>5. Ordenar gráficos</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>3</y>
+        <width>271</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QComboBox" name="combo_graf_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>eps</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>png</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="combo_falla">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>32</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>1. Dip-Slip (Subducción)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2. Normal Dip-Slip (Continental)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3. Strike-Slip</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="Titulo_12">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>0</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tipo de falla (Papazachos)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="check_graficar">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>231</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Generar gráficos finales</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>ResultadoGRAF - Avanzado</string>
+     </attribute>
+     <widget class="QPushButton" name="Boton_txt_externo_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>447</y>
+        <width>221</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Tengo los archivos txt de salida</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Subtitulo_6">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>447</y>
+        <width>251</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <italic>false</italic>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;([HIPO_IRIS].txt; [LISTA_xy].txt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Subtitulo_7">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>464</y>
+        <width>251</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <italic>false</italic>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;[SALIDA_ESTACIONES].txt; [SALIDA_FINAL].txt)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="check_grilla">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>220</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mostrar grilla</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="check_resultados_num">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>380</y>
+        <width>220</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mostrar resultados num.</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="check_fc">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>220</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mostrar frecuencia esquina</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="line_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>3</y>
+        <width>251</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Subtitulo_15">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>10</y>
+         <width>221</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>=====================================
+Hoja   Medidas W x L (cm)
+  A2    42.0 x 59.4
+  A3    29.7 x 42.0
+  A4    21.0 x 29.7
+  A5    14.8 x 21.0
+=====================================
+Para A3 (W x L = 29.7 x 42.0):
+n_filas = 12; Título = 9.0; Ejes = 12
+n_colum =  6; Conte. = 7.9
+=====================================
+Para ?? (W x L = 25.65 x 25.70):
+n_filas =  6; Título = 8.5; Ejes = 12
+n_colum =  6; Conte. = 7.9
+=====================================
+Para ?? (W x L = 22.86 x 20.32):
+n_filas =  2; Título = 11.0; Ejes = 15
+n_colum =  3; Conte. = 10.0
+=====================================</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>195</y>
+        <width>201</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QDoubleSpinBox" name="Size_ejes">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>110</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>12.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ejes general&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Size_titulo">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>30</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>9.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Size_contenido">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>70</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>7.900000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contenido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Título&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_19">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>180</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tamaño de Fuentes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>195</y>
+        <width>251</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QDoubleSpinBox" name="Grosor_Pyy">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.500000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>160</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grosor de Lineas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Espectro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajuste&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Grosor_ajuste">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>70</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.500000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="Line" name="line_7">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>0</y>
+        <width>20</width>
+        <height>431</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Run_SOURCE_05_1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>400</y>
+        <width>200</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>5. Ordenar gráficos</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Titulo_18">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>325</y>
+        <width>200</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Paytone One</family>
+        <italic>false</italic>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;INICIAR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Run_SOURCE_04_1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>360</y>
+        <width>200</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>4. ResultadoGRAF.m</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>3</y>
+        <width>251</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QComboBox" name="combo_tipo_ejes">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>General</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Subetiqueta</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;X&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disposición de ejes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="nombre_eje_y">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>70</y>
+         <width>190</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Amplitude (m/Hz)</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_16">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Título de ejes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="nombre_eje_x">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>30</y>
+         <width>190</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="plainText">
+        <string>Frequency (Hz)</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Subtitulo_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Y&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>3</y>
+        <width>201</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSpinBox" name="num_columnas">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>150</y>
+         <width>52</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>6</number>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Hoja_ancho">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>29.699999999999999</double>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="num_filas">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>52</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>12</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Medidas de hoja WxL (cm)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_graf_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>eps</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>png</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="Titulo_15">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de filas x columnas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Titulo_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Paytone One</family>
+         <italic>false</italic>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formato de archivo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Hoja_alto">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>90</y>
+         <width>80</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
+       </property>
+       <property name="value">
+        <double>42.000000000000000</double>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -1967,8 +2920,8 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;SpectralSOURCE&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright (C) 2020 Néstor Luna Diaz&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Versión: 1.2.1&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Última modificación: 29/07/2020&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Versión: 1.3.0&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Última modificación: 21/09/2020&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enlace de descarga oficial: &lt;a href=&quot;https://github.com/nestor-ld93/SpectralSOURCE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;https://github.com/nestor-ld93/SpectralSOURCE&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Contacto: &lt;a href=&quot;mailto:nestor.luna@unmsm.edu.pe&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;nestor.luna@unmsm.edu.pe&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1991,7 +2944,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/img_info/img_info.png);
+       <string notr="true">border-image: url(:/img_info/logo_info.svg);
 background-color: transparent;</string>
       </property>
       <property name="text">
@@ -2016,6 +2969,33 @@ background-color: transparent;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="Titulo_programa_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>8</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>FreeSans</family>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:14pt; color:transparent;&quot;&gt;[BETA]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
    <zorder>Fondo_2</zorder>
    <zorder>Fondo</zorder>
    <zorder>tabWidget</zorder>
@@ -2024,6 +3004,7 @@ background-color: transparent;</string>
    <zorder>Icon_main</zorder>
    <zorder>logo_sismo</zorder>
    <zorder>Titulo_8</zorder>
+   <zorder>Titulo_programa_2</zorder>
   </widget>
   <action name="actionSalir">
    <property name="text">
